@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Show</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body class="show-body">
+    <a class="show-a" href="/products">Back to products</a>
+    <h1><%=product.name%></h1>
+    <div class="show-div">
+        <% if(product.img.data){ %>
+            <img src="data:image/<%=product.img.contentType%>;base64,
+        <%=product.img.data.toString('base64')%>">
+         <% } else{ %>
+            <img src="<%=product.img.src%>">
+          <% } %>    
+        
+        <p><%=product.description%></p>
+        <p>PRICE: $<%=product.price%></p>
+        <% if(product.qty <= 0) { %>
+            <p>OUT OF STOCK</p>
+        <% }else{ %>
+            <p><%=product.qty%> remaining</p>
+            <form action="/products/<%=product.id%>/buy?_method=PUT" method="POST">
+                <button>BUY</button><br>
+            </form>
+            
+            <% } %>
+            
+            <a href="/products/<%=product.id%>/edit">Edit this <%= product.name %></a>
+    </div>
+    <form action="/products/<%=product.id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+    </form>                      
+
+</body>
+</html>

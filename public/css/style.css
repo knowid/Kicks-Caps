@@ -1,0 +1,385 @@
+.show-body{
+    background-color: lightblue;
+    text-align: center;
+}
+
+.show-div{
+    background-color: orange;
+    display: inline-block;
+    padding: 15px;
+}
+
+.show-div > img {
+    width: 200px;
+}
+
+.show-div > button{
+    margin:  15px;
+}
+
+.show-a {
+    color: black;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Roboto';
+}
+
+/* Core */
+a {
+    color: #000;
+    text-decoration: underline;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* Utility classes */
+.heading-text {
+    padding: 1.2rem 0;
+}
+
+.price,
+.add-to-cart {
+    display: inline-block;
+    padding: .3rem .3rem;
+    border-radius: 20px;
+    border: 1px solid #999;
+    width: 25%;
+    text-align: center;
+    transition: .1s all;
+}
+
+.price-label {
+    display: inline-block;
+    padding: .3rem 2rem;
+    background: orange;
+    border-radius: 20px;
+    margin-top: .75rem;
+    color: #fff;
+}
+
+.add-product-btn {
+    /* position: absolute; */
+    width: 250px;
+    display: block;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding: .45rem 2rem;
+    background: rgb(31, 133, 235);
+    border-radius: 20px;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.add-product-btn:hover {
+    background: dodgerblue;
+}
+
+.add-to-cart {
+    width: 70%;
+}
+
+.price:hover,
+.add-to-cart:hover {
+    background: rgba(0, 0, 0, 1);
+    color: #fff;
+    border-color: #000;
+}
+
+.fa-shopping-cart {
+    color:rgb(221, 41, 41);
+}
+
+.add-to-cart:hover {
+    color: #fff;
+}
+
+.slick-prev:before {
+    /* display: inline; */
+    background: url('https://www.iconpacks.net/icons/2/free-back-arrow-icon-3095-thumb.png') no-repeat;
+    background-size: 20px;
+    padding: .6rem;
+}
+
+.slick-next:before {
+    /* display: inline; */
+    background: url('https://icon-library.com/images/right-arrow-icon/right-arrow-icon-26.jpg') no-repeat;
+    background-size: 20px;
+    padding: .7rem;
+}
+
+/* .slick-center {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    transform: scale(1.25);
+} */
+.slick-current.slick-active .img-container {
+    transform: scale(2);
+    transition: .2s all;
+
+    height: 80%;
+    width: 100%;
+    margin: 10%;
+}
+
+.slick-current.slick-active .img-container img {
+    object-fit: cover;
+    height: 80%;
+    width: 50%; /* needed */
+
+    /* inner img is centered horizontally */
+    vertical-align: top;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+/* Section: hero-section */
+#hero-section {
+    position: relative;
+}
+
+#hero-section .hero-section-container {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 65vh;
+    padding: 1.2rem;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 1.75rem;
+}
+
+#hero-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background: url('https://cdn.flightclub.com/3000/TEMPLATE/261743/1.jpg') center center/cover;
+    background-repeat: repeat-x;
+    background-size: 30%;
+}
+
+/* Section: hat-slider */
+#hat-slider,
+#hat-slider .hat-slider-container .items,
+#sneakers,
+#sneakers .sneakers-container .sneaker-items {
+    margin: 0em 1.7rem;
+}
+
+#hat-slider .hat-slider-container .items .hat-item p {
+    margin-top: 2rem;
+}
+
+#hat-slider .hat-slider-container .items .hat-item .price-and-tags {
+    padding: 1.2rem 0;
+}
+
+#hat-slider .hat-slider-container .hat-item .img-container,
+#sneakers .sneakers-container .sneaker-item .img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 350px;
+}
+
+#hat-slider .hat-slider-container .hat-item .img-container img,
+#sneakers .sneakers-container .sneaker-item .img-container img {
+    /* height: auto; */
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* Section: single-product */
+#single-product {
+    padding: 1.2rem 3rem;
+}
+
+#single-product .single-product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+#single-product .single-product-container .details-container {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#single-product .single-product-container .details-container > div:first-child {
+    padding: 0 0 0 4rem;
+}
+
+#single-product .single-product-container .details-container > div:last-child {
+    display: flex;
+    margin: 1rem 3rem;
+}
+
+#single-product .single-product-container .details-container div:first-child .brand-and-title {
+    margin-left: -6.8rem;
+}
+
+#single-product .single-product-container .details-container div:first-child .brand-and-title p {
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+}
+
+#single-product .single-product-container .details-container > div:last-child .new-purchase {
+    margin-right: 2.5rem;
+}
+
+#single-product .single-product-container .details-container > div:last-child .new-purchase > * {
+    margin: 1.2rem 0;
+}
+
+#single-product .single-product-container .details-container > div:last-child .new-purchase a {
+    background: rgb(228, 29, 36);
+    color: #fff;
+    padding: .5rem 2rem;
+}
+
+#single-product .single-product-container .details-container > div:last-child .new-purchase a:hover {
+    background: rgb(232,28,34);
+}
+
+#single-product .single-product-container .details-container > div:last-child .used-purchase > * {
+    margin: 1.2rem 0;
+}
+
+#single-product .single-product-container .details-container > div:last-child .used-purchase a {
+    background: #999;
+    color: #fff;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    transition: .3s background;
+}
+
+#single-product .single-product-container .details-container > div:last-child .used-purchase a:hover {
+    background: #777;
+}
+
+/* Section: edit-product */
+#edit-product {
+    padding: 1.2rem .75rem;
+   /* height: 100vh;*/
+}
+
+#edit-product .edit-product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#edit-product .edit-product-container .text-container {
+    margin-bottom: .75rem;
+}
+
+#edit-product .edit-product-container .text-container h1,
+#edit-product .edit-product-container .text-container h2 {
+    padding: .3rem 0;
+    text-align: center;
+}
+
+#edit-product .edit-product-container form {
+    width: 100%;
+}
+
+#edit-product .edit-product-container .form-container {
+    max-width: 500px;
+}
+
+#edit-product .edit-product-container form .form-group {
+    display: flex;
+    flex-direction: column;
+    padding: .75rem 0;
+}
+
+#edit-product .edit-product-container form .form-group label {
+    padding-bottom: .5rem;
+}
+
+#edit-product .edit-product-container form .form-group input {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: .3rem .2rem;
+    outline: none;
+    border: 1.5px solid #999;
+}
+
+#edit-product .edit-product-container form .form-group input[type="file"] {
+    background: dodgerblue;
+    color: #fff;
+    border: 1.5px solid dodgerblue;
+}
+
+#edit-product .edit-product-container form .form-group input[type="submit"] {
+    border: 1px solid #999;
+    background: rgb(106, 168, 18);
+    cursor: pointer;
+    color: #fff;
+}
+
+#edit-product .edit-product-container form .form-group input[type="submit"]:hover {
+    background: green;
+}
+
+/* For smaller devices */
+/* @media(max-width: 1345px) {
+    .slick-current.slick-active .img-container {
+        transform: scale(1.0);
+    }
+} */
+
+@media(max-width: 1150px) {
+    #single-product .single-product-container {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+}
+
+@media(max-width: 1100px) {
+    .slick-current.slick-active .img-container {
+        transform: scale(1.0);
+    }
+}
+
+/* for 600px */
+@media(max-width: 700px) {
+    .slick-current.slick-active .img-container {
+        transform: scale(1.0);
+    }
+}

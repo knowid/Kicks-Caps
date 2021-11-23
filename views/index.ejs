@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="slick/slick.css" />
+    <link rel="stylesheet" href="slick/slick-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sneaker</title>
+  </head>
+  <body>
+    <!-- Section: hero-container -->
+    <section id="hero-section">
+      <div class="hero-section-container">
+        <h1>Dunk Low Grey Fog</h1>
+      </div>
+    </section>
+
+    <!-- Section: create-product -->
+    <section id="create-product">
+      <div class="container create-product-container">
+        <a href="/new" class="add-product-btn">Add product</a>
+      </div>
+    </section>
+
+    <!-- Section: slider for hat -->
+    <section id="hat-slider">
+      <div class="container hat-slider-container">
+        <!-- <h2 class="heading-text">Hats picked by hand</h2> -->
+        <div class="items">
+          <% for (let i =1; i < caps.length; i++ ) { %>
+            <a href="/products/<%= caps[i]._id %>" class="hat-item">
+              <div class="img-container">
+                <% if(caps[i].img.data){ %>
+                <img
+                  src="data:image/<%=caps[i].img.contentType%>;base64,
+                <%=caps[i].img.data.toString('base64')%>"
+                />
+                <% } else{ %>
+                <img src="<%=caps[i].img.src%>" />
+                <% } %>
+              </div>
+            </a>
+            <% } %>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: slider for sneakers -->
+    <section id="sneakers">
+      <div class="container sneakers-container">
+        <!-- <h2 class="heading-text">Top picks for you</h2> -->
+        <div class="sneaker-items">
+          <% for (let i =1; i < sneakers.length; i++ ) { %>
+          <a href="/products/<%= sneakers[i]._id %>" class="sneaker-item">
+            <div class="img-container">
+              <% if(sneakers[i].img.data){ %>
+              <img
+                src="data:image/<%=sneakers[i].img.contentType%>;base64,
+              <%=sneakers[i].img.data.toString('base64')%>"
+              />
+              <% } else{ %>
+              <img src="<%=sneakers[i].img.src%>" />
+              <% } %>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/jquery@1.11.0/dist/jquery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"
+    ></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="slider/slider.js"></script>
+  </body>
+</html>
